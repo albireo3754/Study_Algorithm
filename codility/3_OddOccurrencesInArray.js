@@ -17,5 +17,8 @@ function solution(A) {
     }
   }
 }
-console.log(solution([2, 2, 3, 3, 4]));
+function solution2(A) {
+  return A.reduce((x, y) => x ^ y);
+}
+console.log(solution2([1, 2, 3, 7, 1, 1, 3, 1, 567, 7, 2, 1]));
 //return 7
