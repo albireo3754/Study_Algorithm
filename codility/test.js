@@ -30,5 +30,4 @@ function solution(A) {
   }
   return smallestInt;
 }
-
 console.log(solution([3]));
