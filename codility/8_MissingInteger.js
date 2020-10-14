@@ -1,12 +1,18 @@
 //1. score is 0% why? => if A is [3], solution return 4 ,but expected 1
-// => solution =>
+// => solution => add return 1 if start value is not over 1
+//2. score is 22% why? => adding start positive fixed only first problem
+// there must be very big code problem.
+// => solution => js array sort function need argument of comparefunction
+// if there is no comparefunction, it sort 1,100,2,3 like string not int
 
 function solution(A) {
   // write your code in JavaScript (Node.js 8.9.4)
-  A.sort();
+  A.sort(function (a, b) {
+    return a - b;
+  });
 
   var smallestInt = 0;
-  var startPositive = 0;
+  var startPositive = A.length - 1;
   for (var idx = 0; idx < A.length; idx++) {
     if (A[idx] > 0) {
       startPositive = idx;
@@ -17,6 +23,7 @@ function solution(A) {
       }
     }
   }
+
   for (var idx = startPositive; idx < A.length; idx++) {
     if (idx == A.length - 1) {
       smallestInt = A[idx] + 1;
@@ -30,5 +37,4 @@ function solution(A) {
   }
   return smallestInt;
 }
-
-console.log(solution([3]));
+console.log(solution([1, 2, 3, 5, 6, 7]));
