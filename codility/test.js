@@ -3,11 +3,14 @@
 
 function solution(A) {
   // write your code in JavaScript (Node.js 8.9.4)
-  A.sort();
+  A.sort(function (a, b) {
+    return a - b;
+  });
 
   var smallestInt = 0;
   var startPositive = 0;
   for (var idx = 0; idx < A.length; idx++) {
+    console.log(A);
     if (A[idx] > 0) {
       startPositive = idx;
       if (A[idx] > 1) {
@@ -17,6 +20,7 @@ function solution(A) {
       }
     }
   }
+
   for (var idx = startPositive; idx < A.length; idx++) {
     if (idx == A.length - 1) {
       smallestInt = A[idx] + 1;
@@ -30,4 +34,4 @@ function solution(A) {
   }
   return smallestInt;
 }
-console.log(solution([3]));
+console.log(solution([101, 1, 2, 3, 5, 6, 7]));
