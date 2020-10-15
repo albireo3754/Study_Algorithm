@@ -2,17 +2,15 @@
 //But this translation is wrong.
 //solution => will the sort algorithm work in time?
 
+//2. 75% why? => sort of js is not stable sort. fucking this problem
+// is in the previous problem.
 function solution(A) {
   // write your code in JavaScript (Node.js 8.9.4)
 
-  var numDict = {};
+  A.sort((a, b) => a - b);
 
   for (var idx = 0; idx < A.length; idx++) {
-    numDict[A[idx]] = A[idx];
-  }
-
-  for (var key = 1; key <= Object.keys(numDict).length; key++) {
-    if (numDict[key] === undefined) {
+    if (A[idx] !== idx + 1) {
       return 0;
     }
   }
