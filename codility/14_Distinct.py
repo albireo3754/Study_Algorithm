@@ -1,12 +1,16 @@
 # 91%
+# extreme extreme_empty problem: there is no none array Array condition
+# so correct lenA if lenA == 0
+# 100%
 
 def solution(A):
     A.sort()
     resert = 1
-    if len(A) == 1:
-        return 1
+    lenA = len(A)
+    if lenA <= 1:
+        return lenA
 
-    for idx in range(1,len(A)):
+    for idx in range(1,lenA):
         if A[idx-1] != A[idx]:
             resert += 1
     return resert
