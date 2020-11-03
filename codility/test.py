@@ -1,24 +1,18 @@
 #1 - 62% 
 
-def solution(A, B):
+
+
+def solution(H):
     # write your code in Python 3.6
-    goUp = [] #0 go 0
-    goDown = [] #1 go N
+    
+    heights = []
+    wallCnt = 0
+    for wall in H:
+        while len(heights) != 0 and heights[-1] > wall:
+            heights.pop()
+        if len(heights) == 0 or heights[-1]<wall:
+            heights.append(wall)
+            wallCnt += 1
+    return wallCnt
 
-    for i, v in enumerate(B):
-        if v == 0:
-            while len(goDown) != 0:
-                fightFish = goDown.pop()
-                if fightFish> A[i]:
-                    goDown.append(fightFish)
-                    break
-            if len(goDown) == 0:
-                goUp.append(A[i])
-        elif v == 1:
-            goDown.append(A[i])
-        
-                    
-
-
-
-
+print(solution([1,2,3,2,1]))
