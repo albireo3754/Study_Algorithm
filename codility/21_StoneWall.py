@@ -1,31 +1,17 @@
 # 1 - get 85% score => this algorithm's big O is O(N**2). I know but don't solve this problem
+# 2 - get 100% score => i think this problem like picture of problem. verticular box pile up. because of this approch, i got n**2
 
 def solution(H):
     # write your code in Python 3.6
     
     heights = []
     wallCnt = 0
-    nextHeights = []
     for wall in H:
-        while wall> 0:
-            for height in heights:
-                if wall == 0:
-                    break
-                elif height> wall:
-                    nextHeights.append(wall)
-                    wall = 0
-                    wallCnt += 1
-                    break
-                else:
-                    wall -= height
-                    nextHeights.append(height)
-            if wall != 0:
-                nextHeights.append(wall)
-                wall = 0
-                wallCnt += 1
-        heights = nextHeights
-        nextHeights = []
+        while len(heights) != 0 and heights[-1] > wall:
+            heights.pop()
+        if len(heights) == 0 or heights[-1]<wall:
+            heights.append(wall)
+            wallCnt += 1
     return wallCnt
-
 
 solution([8,8,5,7,9,8,7,4,8])
