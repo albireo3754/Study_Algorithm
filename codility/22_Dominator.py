@@ -15,11 +15,16 @@ def solution(A):
             else:
                 domiCandis.pop()
     
-    if len(domiCandis) < 2: 
+    if len(domiCandis) == 0:
         return -1
+        
+    domiCandi = domiCandis[0]
     
     for i, v in enumerate(A):
         if domiCandis[0] == v:
             domiIdx.append(i)
-    return domiIdx[0]
     
+    if len(domiIdx) > len(A)//2:
+        return domiIdx[0]
+    else:
+        return -1
