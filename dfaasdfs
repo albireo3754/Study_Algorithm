@@ -1,0 +1,31 @@
+[1mdiff --git a/codility/tes.js b/codility/tes.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d430f7d[m
+[1m--- /dev/null[m
+[1m+++ b/codility/tes.js[m
+[36m@@ -0,0 +1,25 @@[m
+[32m+[m[32mfunction solution(A) {[m
+[32m+[m[32m  // write your code in JavaScript (Node.js 8.9.4)[m
+[32m+[m[32m  var cars = -1e[m
+[32m+[m[32m  var count = 0;[m
+[32m+[m[32m  var pairsOfPassingCars = 0;w Array(A.length).fill(0);[m
+[32m+[m[32m  for(var idx= 0; idx < A.length; idx++){[m
+[32m+[m[32m    if(A[idx] === 0){[m
+[32m+[m[32m      pairsOfPassingCars += (A[idx] - east + 1) * count[m
+[32m+[m[32m      count += 1;[m
+[32m+[m[32m      east = A[idx][m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m[32m  return pairsOfPassingCars;[m
+[32m+[m[32m}[m
+[32m+[m[32m      minIdx = idx - 1;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    if (minValue > minThree) {[m
+[32m+[m[32m      minValue = minThree;[m
+[32m+[m[32m      minIdx = idx - 2;[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m[32m  return minIdx;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mconsole.log(solution([4, 2, 2, 5, 1, 5, 8]));[m
