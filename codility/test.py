@@ -1,18 +1,36 @@
-#1 - 62% 
+# score 73
+import math
 
 
-
-def solution(H):
+def solution(A):
     # write your code in Python 3.6
-    
-    heights = []
-    wallCnt = 0
-    for wall in H:
-        while len(heights) != 0 and heights[-1] > wall:
-            heights.pop()
-        if len(heights) == 0 or heights[-1]<wall:
-            heights.append(wall)
-            wallCnt += 1
-    return wallCnt
+    peaks = []
+    for i in range(1, len(A)-1):
+        if A[i] > A[i-1] and A[i] > A[i + 1]:
+            peaks.append(i)
 
-print(solution([1,2,3,2,1]))
+    maxFlag2 = int(math.sqrt(len(A)))
+    maxFlag = 0
+
+    if len(peaks) == 0:
+        return 0
+
+    while maxFlag2 > 0:
+        if maxFlag >= maxFlag2:
+            return maxFlag
+        beforePeak = peaks[0]
+        flag = 1
+        idx = 1
+        while maxFlag2 > flag and idx < len(peaks):
+            peak = peaks[idx]
+            if peak - beforePeak >= maxFlag2:
+                flag += 1
+                beforePeak = peak
+            idx += 1
+        maxFlag = max(flag, maxFlag)
+        maxFlag2 -= 1
+
+    return flag
+
+
+solution([1])
