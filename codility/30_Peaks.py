@@ -1,4 +1,5 @@
 # 54%
+# 100%
 
 def solution(A):
     # write your code in Python 3.6
@@ -12,20 +13,39 @@ def solution(A):
         return 0
 
     block = len(peaks) + 1
+    if peaks[-1] + 1 <= len(A) // 2:
+        return 1
 
-    while block >= 1:
+    while block > 1:
         block -= 1
         blockStart = 0
-        blockEnd = 0
+        blockEnd = -1
+
         if len(A) % block != 0:
             continue
 
+        K = len(A) // block
+
+        k = 0
+        t = 1
+        peakInBlock = 0
         for i in range(1, block+1):
-            blockStart = blockEnd
-            blockEnd = len(peaks) // block - 1
-            for peak in peaks:
-                if blockStart <= peak:
-                    continue
-                if blockEnd <= peak:
+            blockStart = blockEnd + 1
+            blockEnd = i * K - 1
+
+            for j in range(k, len(peaks)):
+                if blockEnd >= peaks[j]:
+                    if blockStart <= peaks[j]:
+                        peakInBlock += 1
+                        k = j + 1
+                        break
+                else:
+                    t = 0
                     break
-        return block
+            if t == 0:
+                break
+
+        if t == 0:
+            continue
+        if peakInBlock == block:
+            return block
