@@ -1,5 +1,6 @@
 # score 55 - O(N**2)
 # second code is 55 also.
+# 3 - 77 score can't calculate O(?)
 
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
@@ -18,10 +19,14 @@ def solution(A):
     for i in range(len(A)):
         div = 0
         j = 1
-        while j <= A[i]:
+        while j*j <= A[i]:
             if A[i] % j == 0:
                 div += numCnts[j]
+                
+                if A[i]//j != j:
+                    div += numCnts[A[i]//j]
             j+= 1
+            
     
         nonDivs[i] = len(A) - div
         
