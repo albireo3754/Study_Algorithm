@@ -10,6 +10,8 @@ def test():
         elif parenthesis == ")":
             if len(stack) == 0 or stack.pop() == ")":
                 return "NO"
-    return "YES"
+    if len(stack) == 0:
+        return "YES"
+    return "NO"
 for i in range(N):
     print(test())
