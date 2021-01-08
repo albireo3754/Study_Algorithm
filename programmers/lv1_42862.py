@@ -18,7 +18,7 @@ def solution(n, lost, reserve):
             reserve.remove(i+1)
             answer+=1
     return answer
-    
+
 # overlap delete
-# lost = list(set(lost) - set(reserve))
-# reserve = list(set(reserve) - set(lost))
+# lost_new = list(set(lost) - set(reserve))
+# reserve_new = list(set(reserve) - set(lost))

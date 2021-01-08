@@ -22,7 +22,12 @@ for i in range(len(q_pop)):
         break
     output += f"{q_pop[i]}, "
 print(output)
+
+# 3 6 2 7 5 1 4
 print(*q_pop)
+
+# [3, 6, 2, 7, 5, 1, 4]
 print(str(q_pop))
-print(str(q_pop)[0])
+
+# <3, 6, 2, 7, 5, 1, 4>
 print(f"<{str(q_pop)[1:-1]}>")
