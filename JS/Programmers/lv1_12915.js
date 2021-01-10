@@ -15,3 +15,7 @@ function solution(strings, n) {
   });
   return answer;
 }
+
+// other people's solution
+// return strings.map(a=>[...a][n]+a).sort().map(a=>a.substring(1))
+//
