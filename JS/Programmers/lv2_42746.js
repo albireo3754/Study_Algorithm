@@ -7,3 +7,5 @@ function solution(numbers) {
     .join('');
   return numbersArray - 0 ? numbersArray : '0';
 }
+
+// `${b}${a}` - `${a}${b}` is (to string) plus (b + a - (a + b)) function
