@@ -13,5 +13,4 @@ for i in range(2, X + 1):
     c = dp[i - 1] + 1
     dp.append(min(a, b, c))
 
-print(dp)
 print(dp[X])
