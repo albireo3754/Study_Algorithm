@@ -9,6 +9,5 @@ for i in range(1, N + 1):
     pocketmons[pocketmon] = i
     pocketmons[str(i)] = pocketmon
 
-print('-------------------------------')
 for i in range(M):
     print(pocketmons[sys.stdin.readline().rstrip()])
