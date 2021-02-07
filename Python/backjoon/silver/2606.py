@@ -10,7 +10,6 @@ for i in range(edge_N):
     edges[x].append(y)
     edges[y].append(x)
 
-print(edges)
 visited = [0 for i in range(N + 1)]
 
 def dfs(node):
@@ -23,4 +22,4 @@ def dfs(node):
 
 dfs(1)
 
-print(sum(visited))
+print(sum(visited) - 1)
