@@ -1,5 +1,5 @@
 from sys import stdin
-inf = 100001
+inf = 999999001
 
 input = stdin.readline
 
@@ -21,7 +21,10 @@ def floyd(n):
                 edge[j][k] = min(edge[j][k], edge[j][i] + edge[i][k])
 
 floyd(n)
+for i in range(n):
+    for j in range(n):
+        if edge[i][j] == inf:
+            edge[i][j] = 0
 for i in edge:
     print(*i)
 
-    
