@@ -16,7 +16,6 @@ direction = [[1 , 0], [-1, 0], [0, 1], [0, -1]]
 def bfs():
     q = deque([[1,1,1]])
     while q:
-        print(q)
         x, y, drill = q.popleft()
         before_time = time[x][y][drill]
         if x == N and y == M:
