@@ -5,7 +5,6 @@ T = int(input())
 for i in range(T):
     n = int(input())
     sticker = [list(map(int, input().split())) for i in range(2)]
-    print(sticker)
 
     score = [[0 for _ in range(n)] for _ in range(2)]
     reverse = [1, 0]
