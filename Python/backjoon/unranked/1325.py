@@ -12,18 +12,18 @@ for i in range(M):
     pre[A] += 1
 
 
-def dfs(node):
-    if not edge[node]:
-        hacked[node] = 0
-        return 0
-    count = 0
-    for i in edge[node]:
-        if hacked[i] >= 0:
-            count += hacked[i] + 1
-        else:
-            count += dfs(i) + 1
-    hacked[node] = count
-    return count
+# def dfs(node):
+#     if not edge[node]:
+#         hacked[node] = 0
+#         return 0
+#     count = 0
+#     for i in edge[node]:
+#         if hacked[i] >= 0:
+#             count += hacked[i] + 1
+#         else:
+#             count += dfs(i) + 1
+#     hacked[node] = count
+#     return count
 
 
 answer = []
