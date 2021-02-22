@@ -10,8 +10,6 @@ for i in range(N):
 grid.append([0] * (N + 2))
 direction = [(1, 0), (-1, 0), (0, 1), (0, -1)]
 
-print(grid)
-
 
 def bfs(i, j):
     q = deque()
@@ -21,11 +19,9 @@ def bfs(i, j):
         x, y = q.pop()
         for x_, y_ in direction:
             if grid[x + x_][y + y_] == 1:
-                print(x + x_, y + y_)
                 q.append((x + x_, y + y_))
                 grid[x + x_][y + y_] = 0
                 count += 1
-    print(1)
     return count
 
 
