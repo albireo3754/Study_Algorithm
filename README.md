@@ -6,7 +6,7 @@
 
 ---
 ## Language
-1. <img src="https://img.shields.io/badge/Use%20-Python-blue.svg" alt="Use Python"> 파이썬
+1. <img src="https://img.shields.io/badge/-Python-4B8BBE?logo=python&logoColor=white" alt="Use Python"> 파이썬
 ### Using
 
 ### Planning
