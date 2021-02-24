@@ -7,10 +7,10 @@
 ---
 ## Language
 ### Using
-#### 1. <img src="https://img.shields.io/badge/-Python-4B8BBE?logo=python&logoColor=FFD43B" alt="Use Python"> 파이썬
+#### 1. Python3 <img src="https://img.shields.io/badge/-Python-4B8BBE?logo=python&logoColor=FFD43B" alt="Use Python">
   코딩 테스트에 가장 적합한 언어라 생각하여 파이썬을 주력 언어로 사용하고 있습니다.
   
-#### 2. <img src="https://img.shields.io/badge/-JS-F0DB4F?logo=javascript&logoColor=323330" alt="Use JS"> JS
+#### 2. ES6 <img src="https://img.shields.io/badge/-JS-F0DB4F?logo=javascript&logoColor=323330" alt="Use JS">
   ES6에 추가된 spread 연산, map, set 등에 익숙해지기위해 JS로도 문제를 해결합니다. 추가로 프론트엔드 과제 테스트도 대비도 겸하고 있습니다.
 
 ### Planning
