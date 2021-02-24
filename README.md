@@ -15,7 +15,7 @@
 
 ### Planning
 #### 1. C++ <img src="https://img.shields.io/badge/-c++-black?logo=c%2B%2B&" alt="Use C++">
-  코딩 테스트를 넘어서 고난이도 알고리즘 문제를 도전하기 위해 사용하고자 합니다.
+  코딩 테스트를 넘어서 고난이도 알고리즘 문제를 도전하기 위해 이용할 계획중입니다.
 
 ## Platform
 
