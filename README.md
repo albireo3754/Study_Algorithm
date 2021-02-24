@@ -1,5 +1,4 @@
-# Study Algorithm
----
+# Study Algorithm ---
 ## Study Algorithm Daily
 
 이 곳은 제 :game_die:알고리즘 공부방입니다.
