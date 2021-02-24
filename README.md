@@ -14,4 +14,4 @@
   ES6에 추가된 spread 연산, map, set 등에 익숙해지기위해 JS로도 문제를 해결합니다. 추가로 프론트엔드 과제 테스트도 대비도 겸하고 있습니다.
 
 ### Planning
-#### 1. C++
+#### 1. C++ <img src="https://img.shields.io/badge/-c++-black?logo=c%2B%2B&" alt="Use C++">
