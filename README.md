@@ -1,4 +1,5 @@
-# Study Algorithm ---
+# Study Algorithm 
+---
 ## Study Algorithm Daily
 
 이 곳은 제 :game_die:알고리즘 공부방입니다.
@@ -21,4 +22,4 @@
 ### 1. Backjoon
 ![albireo3754's solved.ac stats](https://github-readme-solvedac.hyp3rflow.vercel.app/api/?handle=albireo3754)
 ### 2. Programmers
-### 3. 
+### 3. Codility
