@@ -6,7 +6,7 @@ min_, max_ = map(int, input().split(' '))
 
 i = 2
 squares = []
-while i**2 <= max_:
+while i<= max_ ** 0.5:
     squares.append(i**2)
     i += 1
 result = [1 for i in range(min_, max_ + 1)]
