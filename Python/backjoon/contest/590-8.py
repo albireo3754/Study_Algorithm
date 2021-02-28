@@ -1,5 +1,5 @@
 import sys
-
+sys.setrecursionlimit(10000000)
 input = sys.stdin.readline
 
 M, N = map(int, input().split(' '))
@@ -22,12 +22,16 @@ def dfs(x, y, time, dx, dy):
         return
     nx, ny = x + dx, y + dy
     time += int(grid[x][y])
-    if 0 <= nx < N and 0 <= ny < M:
+    if 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == 0:
         if grid[nx][ny].isdigit():
             ## visit check###############
+            visited[nx][ny] = 1
             dfs(nx, ny, time, dx, dy)
+            visited[nx][ny] = 0
         elif grid[nx][ny] == 'E':
+            visited[nx][ny]
             dfs(nx, ny, time, dx, dy)
+            visited[nx][ny]
         elif grid[nx][ny] == 'R':
             if dx == 0:
                 newdist = distance[:2]
@@ -38,7 +42,9 @@ def dfs(x, y, time, dx, dy):
                 if 0 <= nx < N and 0 <= ny < M:
                     if grid[nx][ny] == 'R' or grid[nx][ny] == 'H':
                         continue
+                    visited[nx][ny] = 1
                     dfs(nx, ny, time, dx, dy)
+                    visited[nx][ny] = 0
 for dx, dy in distance:
     dfs(terra[0], terra[1], 0, dx,dy)
 

@@ -12,5 +12,5 @@ def make_some(N, K):
     answer.append(K + 1)
     answer.extend([i for i in range(1, N + 1) if i != K + 1])
     return answer
-print(make_some(N, K))
+print(*make_some(N, K))
 
