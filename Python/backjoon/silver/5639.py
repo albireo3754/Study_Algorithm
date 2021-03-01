@@ -3,9 +3,6 @@ import bisect
 sys.setrecursionlimit(100000)
 input = sys.stdin.readlines
 
-pre_order = []
-
-
 def post_order(start, end):
     if start >= end:
         return
@@ -22,8 +19,6 @@ def post_order(start, end):
     post_order(idx, end)
     print(root)
 
-
-temp = sys.stdin.readline().rstrip()
 pre_order = list(map(int, input()))
 # print(pre_order)
 
