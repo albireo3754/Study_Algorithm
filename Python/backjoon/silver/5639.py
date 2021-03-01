@@ -1,30 +1,30 @@
 import sys
+import bisect
 sys.setrecursionlimit(100000)
-input = sys.stdin.readline
+input = sys.stdin.readlines
 
 pre_order = []
 
 
 def post_order(start, end):
-    if start > end:
+    if start >= end:
         return
-    if start == end:
+    if start + 1 == end:
         print(pre_order[start])
         return
     root = pre_order[start]
-    idx = start + 1
-    while idx <= end and root > pre_order[idx]:
-        idx += 1
-    post_order(start + 1, idx - 1)
+    # idx = start + 1
+    # while idx <= end and root > pre_order[idx]:
+    #     idx += 1
+    idx = bisect.bisect_left(pre_order, root, start + 1, end)
+    
+    post_order(start + 1, idx)
     post_order(idx, end)
     print(root)
 
 
 temp = sys.stdin.readline().rstrip()
-
-while temp:
-    pre_order.append(int(temp))
-    temp = sys.stdin.readline().rstrip()
-
+pre_order = list(map(int, input()))
 # print(pre_order)
-post_order(0, len(pre_order) - 1)
+
+post_order(0, len(pre_order))
