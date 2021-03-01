@@ -9,13 +9,11 @@ for i in range(N):
 
 time = 0
 direction = [(1, 0), (-1, 0), (0, 1), (0, -1)]
-def bfs(i, j):
+def bfs(q):
     visited = [[2 for i in range(M)] for i in range(N)]
-    visited[i][j] = 0
-
-    q = deque()
-    q.append((i, j))
-    flag = 0
+    for i,j in q:
+        visited[i][j] = 0
+    next = deque()
     while q:
         i, j = q.popleft()
         for di, dj in direction:
@@ -28,14 +26,14 @@ def bfs(i, j):
                 if grid[ni][nj] == 1:
                     visited[ni][nj] -= 1
                     if visited[ni][nj] == 0:
-                        flag = 1
+                        next.append((ni, nj))
                         grid[ni][nj] = 0
-    return flag
+    return next
     
-while True:
-    flag = bfs(0, 0)
-    if flag == 0:
-        break
+next = deque()
+next.append((0, 0))
+while next:
+    next = bfs(next)
     time += 1
 
-print(time)
+print(time - 1)
