@@ -70,8 +70,8 @@ def solution():
         diffusion(grid)
         circulation(grid, machine)
     # print(grid)
-    for i in grid:
-        print(i)
+    # for i in grid:
+    #     print(i)
     print(sum(map(sum, grid)) + 2)
 
 solution()
