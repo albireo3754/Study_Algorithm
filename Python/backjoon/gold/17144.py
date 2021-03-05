@@ -29,6 +29,7 @@ def circulation(grid, robot):
     temp = 0
     for i in range(1, C):
         grid[top[0]][i], temp = temp, grid[top[0]][i]
+        
     for i in range(top[0] - 1, -1, -1):
         grid[i][-1], temp = temp, grid[i][-1]
     
@@ -40,6 +41,7 @@ def circulation(grid, robot):
     ## bottom
     bot = [robot[1], 0]
     temp = 0
+
     for i in range(1, C):
         grid[bot[0]][i], temp = temp, grid[bot[0]][i]
     
@@ -70,8 +72,8 @@ def solution():
         diffusion(grid)
         circulation(grid, machine)
     # print(grid)
-    for i in grid:
-        print(i)
+    # for i in grid:
+    #     print(i)
     print(sum(map(sum, grid)) + 2)
 
 solution()
