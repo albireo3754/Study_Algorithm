@@ -5,14 +5,13 @@ using namespace std;
 
 int arr[100001] = {};
 
-int main() {
+int main() 
+{
 	int n, m;
 	int mask;
-	int o, x;
 	for (int i = 0; i < 26; i++) {
 		mask |= 1 << i;
 	}
-
 	cin >> n >> m;
 	string temp;
 	for (int i = 0; i < n; i++) {
@@ -22,14 +21,16 @@ int main() {
 		}
 	}
 
+	int o;
+	char x;
 	for (int i = 0; i < m; i++) {
 		cin >> o >> x;
 		int count = 0;
 		mask ^= 1 << (x - 'a');
-		for (auto j: arr) {
-			if (j == (j & mask)) count++;
+		for (int j = 0; j < n; j++) {
+			if (arr[j] == (arr[j] & mask)) count++;
 		}
-		cout << count;
+		cout << count << endl;
 	}
 
 	return 0;
