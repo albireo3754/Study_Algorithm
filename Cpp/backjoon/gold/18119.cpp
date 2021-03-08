@@ -8,7 +8,7 @@ int arr[100001] = {};
 int main() {
 	int n, m;
 	int mask;
-	
+	int o, x;
 	for (int i = 0; i < 26; i++) {
 		mask |= 1 << i;
 	}
