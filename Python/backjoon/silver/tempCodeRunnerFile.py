@@ -4,14 +4,14 @@ input = sys.stdin.readline
 
 N = int(input())
 
-grape = [int(input()) for _ in range(N)]
+step = [int(input()) for _ in range(N)]
+
 dp = [0 for _ in range(N)]
-dp[0] = grape[0]
-if N > 1:
-    dp[1] = grape[0] + grape[1]
-if N > 2:
-    dp[2] = grape[2] + max(grape[0], grape[1])
-for i in range(3, N):
-    dp[i] = grape[i] + max(grape[i - 1] + dp[i - 3], dp[i - 2])
-    dp[i] = max(dp[i - 1], dp[i])
-print(dp[-1])
+dp[0] = step[0]
+
+dp[1] = step[0] + step[1]
+
+for i in range(2, N):
+    dp[i] = max(dp[i - 2] + step[i], dp[i - 3] + step[i - 1] + step[i])
+
+print(max(dp))
