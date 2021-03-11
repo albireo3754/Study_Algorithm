@@ -16,7 +16,7 @@ else:
 
     answer = 0
     for i in range(0, 10):
-        answer += dp[i][-1] % 1000000000
+        answer += dp[i][-1] 
 
     # print(dp)
-    print(answer)
+    print(answer% 1000000000)
