@@ -1,5 +1,5 @@
 import sys
-sys.setrecursionlimit(300000)
+
 input = sys.stdin.readline
 
 N, L = map(int, input().split(' '))
@@ -17,12 +17,19 @@ def find(parent, x):
         return parent[x]
 
 def union(parent, x, y, drink):
-    x = find(parent, x)
-    y = find(parent, y)
+    x = parent[x]
+    y = parent[y]
 
+    if x == y:
+        return x
     # print(x, y)
-    parent[x] = y
-    print("LADICA")
+    if drink[x] == 0:
+        parent[x] = y
+        return x
+    elif drink[y] == 0:
+        parent[x] = y
+        return y
+    return y
 for i in range(1, N + 1):
     a, b = map(int, input().rstrip().split(' '))
 
@@ -33,15 +40,15 @@ for i in range(1, N + 1):
     else:
         if drink[b] == 0:
             drink[b] = i
+            ladica[a] = b
             union(ladica, b, a, drink)
         else:
-            if drink[find(ladica, a)] == 0:
-                drink[find(ladica, a)] = i
-                union(ladica, a, b, drink)
-            elif drink[find(ladica, b)] == 0:
-                drink[find(ladica, b)] = i
-                union(ladica, b, a, drink) 
-            else:
+            temp = union(ladica, a, b, drink)
+            if drink[temp]:
+                flag = 0
+                drink[temp] = i
                 print("SMECE")
-
-# print(drink, ladica)
+            else:
+                drink[temp] = i
+    if flag:
+        print("LADICA")
