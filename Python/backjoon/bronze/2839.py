@@ -16,7 +16,7 @@ for j in range(3, n + 1):
             dp[j] = dp[j - 3] + 1
         else:
             dp[j] = min(dp[j - 3], dp[j])
-print(dp)
+# print(dp)
 if dp[n] == 0:
     print(-1)
 else:
