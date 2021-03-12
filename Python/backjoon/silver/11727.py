@@ -14,4 +14,4 @@ else:
     for i in range(3, n + 1):
         dp[i] = (2*dp[i - 2] % 10007 + dp[i - 1] % 10007) % 10007
 
-print(dp[n])
+    print(dp[n])
