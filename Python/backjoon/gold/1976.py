@@ -6,9 +6,10 @@ N = int(input())
 M = int(input())
 grid = []
 
-parent = [-1 for i in range(1 + N)]
+parent = [-1 for i in range(N + 1)]
 
 def find(x):
+    # print(x)
     if parent[x] < 0:
         return x
     
@@ -43,7 +44,7 @@ for i in range(N):
 p = find(plans[0])
 for i in plans:
     if find(i) != p:
-        print(find(i))
+        # print(find(i))
         print("NO")
         break
 else:
