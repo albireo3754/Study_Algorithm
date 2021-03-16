@@ -20,6 +20,6 @@
 ## Platform
 
 ### 1. Backjoon
-![albireo3754's solved.ac stats](https://github-readme-solvedac.hyp3rflow.vercel.app/api/?handle=albireo3754)
+![albireo3754's solved.ac stats](https://github-readme-solvedac.albireo3754.vercel.app/api/?handle=albireo3754)
 ### 2. Programmers
 ### 3. Codility
