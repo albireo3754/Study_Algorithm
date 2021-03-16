@@ -20,6 +20,6 @@
 ## Platform
 
 ### 1. Backjoon
-[![solved.ac tier](http://mazassumnida.wtf/api/generate_badge?boj=albireo3754)](https://solved.ac/albireo3754)
+[![solved.ac tier](http://mazassumnida.wtf/api/v2/generate_badge?boj=albireo3754)](https://solved.ac/albireo3754)
 ### 2. Programmers
 ### 3. Codility
