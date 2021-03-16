@@ -1,22 +1,33 @@
-n = int(input())
+import sys
 
-dp = [[0 for i in range(n + 1)] for i in range(10)]
+input = sys.stdin.readline
 
-for i in range(1, 10):
-    dp[i][1] = 1
+N = int(input().rstrip())
 
-if n == 1:
-    print(9)
-else:
-    for j in range(2, n + 1):
-        dp[0][j] = dp[1][j - 1]
-        dp[9][j] = dp[8][j - 1]
-        for i in range(1, 9):
-            dp[i][j] = (dp[i - 1][j - 1] + dp[i + 1][j - 1])
+paper = []
+answer = [0, 0, 0]
 
-    answer = 0
-    for i in range(0, 10):
-        answer += dp[i][-1] % 1000000000
+for i in range(N):
+    paper.append(list(map(int, input().split(' '))))
 
-    # print(dp)
-    print(answer)
+def divide(x, y, size):
+    if size == 1:
+        return paper[x][y]
+    
+    a = divide(x, y, size // 2)
+    b = divide(x + size // 2, y, size // 2)
+    c = divide(x, y + size // 2, size // 2)
+    d = divide(x + size // 2, y + size // 2, size // 2)
+
+    if a == b == c == d:
+        return a
+    else:
+        answer[a] += 1
+        answer[b] += 1
+        answer[c] += 1
+        answer[d] += 1
+        return 2
+
+divide(0, 0, N)
+for i in range(2):
+    print(answer[i])

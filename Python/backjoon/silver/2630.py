@@ -20,6 +20,8 @@ def divide(x, y, size):
     d = divide(x + size // 2, y + size // 2, size // 2)
 
     if a == b == c == d:
+        if size == N:
+            answer[a] += 1
         return a
     else:
         answer[a] += 1
