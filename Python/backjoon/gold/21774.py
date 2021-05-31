@@ -51,7 +51,11 @@ for j in range(Q):
     res = 0
     for i in range(level, 7):
         lower_bound = bisect.bisect_left(lv[i], time1)
+<<<<<<< HEAD
         upper_bound = bisect.bisect_left(lv[i], time2)
+=======
+        upper_bound = bisect.bisect_right(lv[i], time2)
+>>>>>>> Simulation
         res += upper_bound - lower_bound
     print(res)
 
