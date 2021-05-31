@@ -16,7 +16,11 @@ coins.sort()
 dp[0] = 1
 
 for i, coin in enumerate(coins):
+<<<<<<< HEAD
     for j in range(coin, 10000):
+=======
+    for j in range(coin, 10001):
+>>>>>>> Simulation
         if i == 0 and j == coin:
             dp[j] = 1
         elif j == coin:
