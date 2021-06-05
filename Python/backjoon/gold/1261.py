@@ -7,24 +7,24 @@ M, N = map(int, input().split(' '))
 grid = []
 for i in range(N):
     grid.append(list(input().rstrip()))
-
-visited = [[False for _ in range(M)] for _ in range(N)]
+INF = 100000
+visited = [[INF for _ in range(M)] for _ in range(N)]
 direction = ((0, 1), (0, -1), (1, 0), (-1, 0))
 
 def bfs():
     q = deque()
     q.append((0, 0, 0))
-    visited[0][0] = True
     while q:
         i, j, w = q.popleft()
+        # print(i, j, w)
         if i == N - 1 and j == M - 1:
             return w
-        visited[i][j] = True
-        for di, dj in direction:
+        for d, (di, dj) in enumerate(direction):
             ni, nj = i + di, j + dj
             if 0 <= ni < N and 0 <= nj < M:
-                if visited[ni][nj]:
+                if w >= visited[ni][nj]:
                     continue
+                visited[ni][nj] = w
                 if grid[ni][nj] == '0':
                     q.appendleft((ni, nj, w))
                 else:
