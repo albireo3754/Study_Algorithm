@@ -17,6 +17,7 @@ def bfs():
     q = deque()
     q.append((7, 0, 0))
     time = 0
+    visited = [[[False for i in range(8)] for i in range(8)] for i in range(8)]
     while q:
         i, j, n = q.popleft()
         if n == 8:
@@ -30,7 +31,8 @@ def bfs():
         
         for di, dj in direction:
             ni, nj = i + di, j + dj
-            if 0 <= ni < 8 and 0 <= nj < 8 and grid[ni][nj] == '.':
+            if 0 <= ni < 8 and 0 <= nj < 8 and grid[ni][nj] == '.' and not visited[ni][nj][n]:
+                visited[ni][nj][n] = True
                 q.append((ni, nj, n + 1))
     return FAIL
 print(bfs())
