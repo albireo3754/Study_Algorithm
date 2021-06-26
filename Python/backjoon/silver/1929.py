@@ -15,6 +15,11 @@ def sieve(M):
                 j += i
 
 sieve(M)
+<<<<<<< HEAD
+isPrime[0] = False
+isPrime[1] = False
+=======
+>>>>>>> 24d78c483f6d5670e87720aa83f46fb86f46d499
 for i in range(N, M + 1):
     if isPrime[i]:
         print(i)
