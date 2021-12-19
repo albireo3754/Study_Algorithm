@@ -41,48 +41,51 @@ def solution(n, start, end, roads, traps):
     # print(edges[1][3])
     while q:
         here, distance, direction, used_traps = heapq.heappop(q)
+        # print(here, distance, used_traps)
         if here == end:
             answer = distance
             break
-        for there, weight in edges[direction][here].items():
-            # print(here, there, weight)
-            prev_distance = distances[direction][here][there]
+        for there, weight in edges[FORWARD][here].items():
+            if (there in used_traps) and (here not in used_traps):
+                continue
+            if (here in used_traps) and (there not in used_traps):
+                continue
+            prev_distance = distances[FORWARD][here][there]
             new_distance = distance + weight
-            # print(here, there, direction, prev_distance, new_distance, used_traps)
             if is_visited(prev_distance) and prev_distance <= new_distance:
                 continue
-            distances[direction][here][there] = new_distance
+            distances[FORWARD][here][there] = new_distance
             new_direction = direction
             new_used_traps = used_traps.copy()
             if there in traps:
                 if there in new_used_traps:
                     new_used_traps.remove(there)
+                    new_direction = FORWARD
                 else:
                     new_used_traps.add(there)
-                    new_direction = toggle_direction(direction)
-            else:
-                new_direction = FORWARD
+                    new_direction = BACKWARD
+            # print(new_used_traps)
             heapq.heappush(q, (there, new_distance, new_direction, new_used_traps))
-        direction = toggle_direction(direction)
-        for there, weight in edges[direction][here].items():
-            # print(here, there, weight)
-            if there not in new_used_traps:
+        for there, weight in edges[BACKWARD][here].items():
+            if (there not in traps) and (here not in traps):
                 continue
-            prev_distance = distances[direction][here][there]
+            if here in used_traps and there in used_traps:
+                continue
+            # print(4)
+            prev_distance = distances[BACKWARD][here][there]
             new_distance = distance + weight
-            # print(here, there, direction, prev_distance, new_distance, used_traps)
             if is_visited(prev_distance) and prev_distance <= new_distance:
                 continue
-            distances[direction][here][there] = new_distance
+            distances[BACKWARD][here][there] = new_distance
             new_direction = direction
             new_used_traps = used_traps.copy()
             if there in traps:
                 if there in new_used_traps:
                     new_used_traps.remove(there)
+                    new_direction = BACKWARD
                 else:
                     new_used_traps.add(there)
-                    new_direction = toggle_direction(direction)
-            else:
-                new_direction = FORWARD
+                    new_direction = BACKWARD
+            # print(new_used_traps)
             heapq.heappush(q, (there, new_distance, new_direction, new_used_traps))
     return answer
