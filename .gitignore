@@ -2,3 +2,8 @@ node_modules
 test.cpp
 *.exe
 tempCodeRunnerFile.py
+Cpp/**/bronze/*
+!Cpp/backjoon/bronze/*.cpp
+
+
+
