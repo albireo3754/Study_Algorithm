@@ -2,14 +2,6 @@
 
 using namespace std;
 
-char* reverse(const char* arr) {
-  char* result;
-  for(int i = 0, j = 2; i < 3; i++, j--) {
-    result[i] = arr[j];
-  }
-  return result;
-}
-
 int main() {
   char A[4], B[4];
   cin >> A >> B;
