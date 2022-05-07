@@ -21,7 +21,7 @@ int main() {
 
     j -= 1;
     i += 2;
-    while (i < 2 * N - 1)
+    while (i < 2 * N * N * N * N * N * N * N - 1)
     {
         j -= 1;
         i += 2;
