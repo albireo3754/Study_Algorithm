@@ -72,6 +72,8 @@
     "concepts": "cpp",
     "algorithm": "cpp",
     "charconv": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "deque": "cpp",
+    "functional": "cpp"
   },
 }
