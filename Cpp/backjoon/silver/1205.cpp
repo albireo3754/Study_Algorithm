@@ -17,17 +17,14 @@ int main()
     fill_n(arr, 55, -1);
     cin >> N >> TESU >> P;
 
-    int tesuWillInsert = -1;
-    int tesuWillSameRank = -1;
     int rank = 1;
     int sameRank = 0;
     for (int n = 0; n < N; ++n)
     {
         cin >> arr[n];
-        if (arr[n] < TESU)
+        if (TESU < arr[n])
         {
-            cout << rank + sameRank;
-            return 0;
+            rank++;
         }
         else if (arr[n] == TESU)
         {
@@ -35,16 +32,14 @@ int main()
         }
         else
         {
-            rank += sameRank;
-            sameRank = 0;
-            rank++;
+            break;
         }
     }
-    cout << rank << sameRank;
+    // cout << rank << sameRank;
 
     if (rank + sameRank <= P)
     {
-        cout << rank + sameRank;
+        cout << rank;
     }
     else
     {
