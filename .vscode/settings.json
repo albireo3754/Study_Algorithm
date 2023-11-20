@@ -74,6 +74,7 @@
     "charconv": "cpp",
     "queue": "cpp",
     "deque": "cpp",
-    "functional": "cpp"
+    "functional": "cpp",
+    "set": "cpp"
   },
 }
