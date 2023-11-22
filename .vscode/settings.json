@@ -75,6 +75,7 @@
     "queue": "cpp",
     "deque": "cpp",
     "functional": "cpp",
-    "set": "cpp"
+    "set": "cpp",
+    "stack": "cpp"
   },
 }
