@@ -76,6 +76,7 @@
     "deque": "cpp",
     "functional": "cpp",
     "set": "cpp",
-    "stack": "cpp"
+    "stack": "cpp",
+    "__tree": "cpp"
   },
 }
