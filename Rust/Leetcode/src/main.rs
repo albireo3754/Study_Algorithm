@@ -167,7 +167,7 @@ fn deal_problem(problem: &Problem, code: &CodeDefinition, write_mod_file: bool) 
 
     file.write_all(source.as_bytes()).unwrap();
     drop(file);
-
+    
     if write_mod_file {
         let mut lib_file = fs::OpenOptions::new()
             .write(true)
